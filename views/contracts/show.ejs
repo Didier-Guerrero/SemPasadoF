@@ -1,0 +1,28 @@
+<!-- views/contracts/show.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del Contrato</title>
+  </head>
+  <body>
+    <h1>Detalles del Contrato</h1>
+    <p><strong>ID:</strong> <%= contract.id_con %></p>
+    <p><strong>Nombre:</strong> <%= contract.nombre_con %></p>
+    <p><strong>Monto:</strong> <%= contract.monto_con %></p>
+    <p><strong>Fecha:</strong> <%= contract.fecha_con %></p>
+    <p><strong>ID del Cliente:</strong> <%= contract.clientid %></p>
+
+    <a href="/contracts/<%= contract.id_con %>/edit">Editar</a>
+    <form
+      action="/contracts/<%= contract.id_con %>/delete"
+      method="POST"
+      style="display: inline"
+    >
+      <button type="submit">Eliminar</button>
+    </form>
+    <br />
+    <a href="/contracts/all">Regresar a la lista de contratos</a>
+  </body>
+</html>

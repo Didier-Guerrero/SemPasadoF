@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Contratos</title>
+  </head>
+  <body>
+    <h1>Lista de Contratos</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre del Contrato</th>
+          <th>Monto</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (contracts.length > 0) { %> <% contracts.forEach(contract => { %>
+        <tr>
+          <td><%= contract.id_con %></td>
+          <td><%= contract.nombre_con %></td>
+          <td><%= contract.monto_con %></td>
+          <td>
+            <a href="/contracts/<%= contract.id_con %>">Ver</a>
+
+            <a href="/contracts/<%= contract.id_con %>/edit">Editar</a>
+
+            <form
+              action="/contracts/<%= contract.id_con %>/delete"
+              method="POST"
+              style="display: inline"
+            >
+              <button type="submit">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+        <% }); %> <% } else { %>
+        <tr>
+          <td colspan="5">No se encontraron contratos.</td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <br />
+    <a href="/contracts/filter">Volver a Filtrar Contratos</a>
+  </body>
+</html>

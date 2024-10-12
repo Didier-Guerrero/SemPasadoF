@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Cliente</title>
+  </head>
+  <body>
+    <h1>Editar Cliente</h1>
+    <form action="/clients/<%= client.id_cli %>" method="POST">
+      <label for="nombre_cli">Nombre:</label>
+      <input
+        type="text"
+        id="nombre_cli"
+        name="nombre_cli"
+        value="<%= client.nombre_cli %>"
+      />
+      <br />
+      <button type="submit">Actualizar</button>
+    </form>
+    <br />
+    <a href="/clients">Regresar a la lista de clientes</a>
+  </body>
+</html>

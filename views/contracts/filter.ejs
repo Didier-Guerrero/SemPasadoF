@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtrar Contratos por Fecha</title>
+  </head>
+  <body>
+    <h1>Filtrar Contratos</h1>
+
+    <form action="/contracts/filter/results" method="GET">
+      <label for="start_date">Desde:</label>
+      <input type="date" id="start_date" name="start_date" required />
+      <br />
+      <label for="end_date">Hasta:</label>
+      <input type="date" id="end_date" name="end_date" required />
+      <br />
+      <button type="submit">Filtrar Contratos</button>
+    </form>
+
+    <br />
+
+    <form action="/contracts/all" method="GET">
+      <button type="submit">Ver Todos los Contratos</button>
+    </form>
+
+    <br />
+    <a href="/">Volver a la Página de Inicio</a>
+  </body>
+</html>
